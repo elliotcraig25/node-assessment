@@ -1,11 +1,9 @@
 const express = require('express');
 const ctrl = require(`./userCtrl`);
-const bodyParser = require('body-parser');
 
 const app = express();
 
-// app.use(express.json());
-app.use(bodyParser.json());
+app.use(express.json());
 
 // endpoint 1
 app.get('/api/user', ctrl.getEntireUserArray)

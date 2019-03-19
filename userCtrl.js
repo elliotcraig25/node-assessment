@@ -24,6 +24,19 @@ module.exports = {
         res.send(returnNonArray).status(200)
     },
     updateUserByID: (req, res)=>{
-        console.log(req.body.first_name)
+        console.log(req.body)
+        console.log(userData[req.params.userId - 1])
+        userData[req.params.userId - 1].first_name = req.body.first_name
+        userData[req.params.userId - 1].last_name = req.body.last_name
+        userData[req.params.userId - 1].email = req.body.email
+        userData[req.params.userId - 1].gender = req.body.gender
+        userData[req.params.userId - 1].language = req.body.language
+        userData[req.params.userId - 1].age = req.body.age
+        userData[req.params.userId - 1].city = req.body.city
+        userData[req.params.userId - 1].state = req.body.state
+        userData[req.params.userId - 1].type = req.body.type
+        userData[req.params.userId - 1].favorites = req.body.favorites
+        console.log(userData[req.params.userId - 1])
+        res.send(userData).status(200)
     }
 }
